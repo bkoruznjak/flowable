@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">      
 	<meta name="LegendTheme" content="legendtheme">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Flowable</title>
+	<title>Clasico - Minimal Portfolio Template</title>
     
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -15,8 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/ionicons.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
-
-<body>
+<body id="grid-two" class="projects">
 	
     <header id="header">
     	<!-- start Navigation -->
@@ -31,15 +30,37 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				  </button>
-				  <a class="navbar-brand" href="index.html">Flowable</a>
+				  <a class="navbar-brand" href="index.html">Clasico</a>
 				</div>
 			
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+					  <ul class="dropdown-menu">
+						<li><a href="index.html">Grid Three</a></li>
+						<li><a href="home-grid-two.html">Grid Two</a></li>
+						<li><a href="home-agency.html">Agency</a></li>
+					  </ul>
+					</li>
+					<li ><a href="about.html">About</a></li>
 					<li><a href="services.html">Services</a></li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+					  <ul class="dropdown-menu">
+						<li><a href="project-grid-two.html">Project Grid Two</a></li>
+						<li><a href="project-grid-three.html">Project Grid Three</a></li>
+						<li><a href="project-single.html">Single project Page</a></li>
+					  </ul>
+					</li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+					  <ul class="dropdown-menu">
+						<li><a href="blog-with-sidebar.html">Blog Page</a></li>
+						<li><a href="blog-post.html">Single Blog Page</a></li>
+					  </ul>
+					</li>
 					<li><a href="contact.html">Contact</a></li>
 				  </ul>
 				</div><!-- /.navbar-collapse -->
@@ -47,56 +68,53 @@
           </div><!-- /.container-fluid -->
         </nav><!-- end nav -->
     </header><!-- end header-->
-    
 	
-	<div class="banner-area">
+	<div class="breadcrumb_area">
 		<div class="container">
 			<div class="row">
-				<div class="home-top col-sm-12 ">
-					<h3>Flowable company</h3>
-					<p>We make ideas happen</p>
-					<a href="#">Learn more</a>
+				<div class="home-top col-sm-12">
+					<h3>Project Grid Two</h3>
 				</div><!-- end home-top -->
 			</div><!-- end row -->
 		</div><!-- end container -->
-    </div>
+	</div><!-- end breadcrumb -->
+	
 	
     <section id="portfolio" class="portfolio-area">
     	<div class="container inner-portfolio">
-		
 			<div class="portfolio-filter">
-				<a class="filter" data-filter=".design, .web, .brending">All</a>
-				<a class="filter" data-filter=".design">memoire</a>
-				<a class="filter" data-filter=".web">software development</a>
-				<a class="filter" data-filter=".brending">marketing</a>
+				<a class="filter" data-filter=".design, .web, .brending, .video">All</a>
+				<a class="filter" data-filter=".design">design</a>
+				<a class="filter" data-filter=".web">web</a>
+				<a class="filter" data-filter=".brending">brending</a>
+				<a class="filter" data-filter=".video">video</a>
 			</div>
-			
             <div class="portfolio">
                 <div class="mix design brending" data-my-order="1">
                 	<a href="project-single.html">
-                        <img src="/images/portfolio/1-2.jpg" alt="" />
+                        <img src="images/portfolio/work_01.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
-                                <p>memoire</p>
+                                <p>design, brending</p>
                             </div><!-- end text -->
                         </div><!-- end inner-item -->
                     </a>
                 </div>
                 <div class="mix web design" data-my-order="2">
                 	<a href="project-single.html">
-                        <img src="images/portfolio/2-2.jpg" alt="" />
+                        <img src="images/portfolio/work_02.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
-                                <p>memoire</p>
+                                <p>design</p>
                             </div><!-- end text -->
                         </div><!-- end inner-item -->
                     </a>
                 </div>
                 <div class="mix video" data-my-order="3">
                 	<a href="project-single.html">
-                        <img src="images/portfolio/2-1.jpg" alt="" />
+                        <img src="images/portfolio/work_03.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
@@ -107,7 +125,7 @@
                 </div>
                 <div class="mix brending" data-my-order="4">
                 	<a href="project-single.html">
-                        <img src="images/portfolio/3-2.jpg" alt="" />
+                        <img src="images/portfolio/work_04.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
@@ -118,18 +136,18 @@
                 </div>
                 <div class="mix brending" data-my-order="4">
                 	<a href="project-single.html">
-                        <img src="images/portfolio/4-2.jpg" alt="" />
+                        <img src="images/portfolio/work_05.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
-                                <p>memoire</p>
+                                <p>brending</p>
                             </div><!-- end text -->
                         </div><!-- end inner-item -->
                     </a>
                 </div>
                 <div class="mix video" data-my-order="4">
                 	<a href="project-single.html">
-                        <img src="images/portfolio/6.jpg" alt="" />
+                        <img src="images/portfolio/work_06.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
@@ -149,24 +167,13 @@
                         </div><!-- end inner-item -->
                     </a>
                 </div>
-                <div class="mix design" data-my-order="4">
-                	<a href="project-single.html">
-                        <img src="images/portfolio/work_08.jpg" alt="" />
-                        <div class="inner-item">
-                            <div class="text">
-                                <h6>Your  Portfolio  Title</h6>
-                                <p>design</p>
-                            </div><!-- end text -->
-                        </div><!-- end inner-item -->
-                    </a>
-                </div>
                 <div class="mix web" data-my-order="4">
                 	<a href="project-single.html">
                         <img src="images/portfolio/work_09.jpg" alt="" />
                         <div class="inner-item">
                             <div class="text">
                                 <h6>Your  Portfolio  Title</h6>
-                                <p>Web</p>
+                                <p>web</p>
                             </div><!-- end text -->
                         </div><!-- end inner-item -->
                     </a>
@@ -181,7 +188,7 @@
             	<div class="footertop">
                 
                     <div class="footer-copy-right col-sm-12">
-						<a  href="#"> Flowable </a>
+						<a  href="#"> Clasico </a>
 						<div class="footer-top-social-info">
                             <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -193,7 +200,7 @@
 					<div class="copy-right-area">
 					
 						<div class="footer-copy-right col-sm-12">
-							<p > © 2025 Flowable d.o.o.  </p>
+							<p > © 2019 Clasico - Minimal Portfolio Template  </p>
 						</div><!-- end footer-widget -->
 
 						
@@ -204,9 +211,6 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </footer><!-- end footer -->
-	
-	
-
 
 
 	<!-- JavaScript Files -->
@@ -214,7 +218,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/tilt.js"></script>
+	<script src="js/tilt.js"></script>	
 	<script src="js/mail.js"></script>
 	<script src="js/scrollup.js"></script>
 	<script src="js/script.js"></script>
