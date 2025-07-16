@@ -5,6 +5,38 @@ const navMenu = document.getElementById('nav-menu');
 const contactForm = document.getElementById('contact-form');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Logo fallback handling
+document.addEventListener('DOMContentLoaded', () => {
+    const logoImage = document.querySelector('.logo-image');
+    const logoText = document.querySelector('.logo-text');
+    const footerLogoImage = document.querySelector('.footer-logo-image');
+    const footerLogoText = document.querySelector('.footer-logo-text');
+    
+    // Handle main logo fallback
+    if (logoImage) {
+        logoImage.addEventListener('error', () => {
+            logoImage.style.display = 'none';
+            if (logoText) logoText.style.display = 'inline';
+        });
+        
+        logoImage.addEventListener('load', () => {
+            if (logoText) logoText.style.display = 'none';
+        });
+    }
+    
+    // Handle footer logo fallback
+    if (footerLogoImage) {
+        footerLogoImage.addEventListener('error', () => {
+            footerLogoImage.style.display = 'none';
+            if (footerLogoText) footerLogoText.style.display = 'block';
+        });
+        
+        footerLogoImage.addEventListener('load', () => {
+            if (footerLogoText) footerLogoText.style.display = 'none';
+        });
+    }
+});
+
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {

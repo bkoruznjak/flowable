@@ -128,11 +128,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+    display: block;
+}
+
+/* SVG logo specific styling */
+.logo-image[src$=".svg"] {
+    fill: var(--navy-blue);
+}
+
+.logo-text {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
     color: var(--navy-blue);
-    text-decoration: none;
+}
+
+/* Hide logo text if image is loaded */
+.nav-logo a:has(.logo-image:not([src*="placeholder"])) .logo-text {
+    display: none;
+}
+
+/* Fallback: hide image if it fails to load */
+.logo-image:not([src]) {
+    display: none;
 }
 
 .nav-menu {
@@ -574,9 +601,38 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.footer-brand h3 {
-    font-size: 1.8rem;
+.footer-logo {
+    display: flex;
+    align-items: center;
     margin-bottom: 0.5rem;
+}
+
+.footer-logo-image {
+    height: 32px;
+    width: auto;
+    margin-right: 0.5rem;
+    filter: brightness(0) invert(1); /* Makes any logo white */
+    display: block;
+}
+
+/* SVG footer logo specific styling */
+.footer-logo-image[src$=".svg"] {
+    fill: white;
+}
+
+.footer-logo-text {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+/* Hide footer logo text if image is loaded */
+.footer-logo:has(.footer-logo-image:not([src*="placeholder"])) .footer-logo-text {
+    display: none;
+}
+
+/* Fallback: hide image if it fails to load */
+.footer-logo-image:not([src]) {
+    display: none;
 }
 
 .footer-brand p,
