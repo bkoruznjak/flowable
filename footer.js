@@ -32,6 +32,18 @@ class FooterManager {
     initializeFooter() {
         // Initialize logo fallback for footer
         this.initializeFooterLogoFallback();
+        
+        // Set current year dynamically
+        this.setCurrentYear();
+    }
+
+    // Set the current year in the copyright
+    setCurrentYear() {
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            const currentYear = new Date().getFullYear();
+            currentYearElement.textContent = currentYear;
+        }
     }
 
     // Logo fallback handling for footer

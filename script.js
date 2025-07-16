@@ -10,6 +10,7 @@ function initializePageFeatures() {
     // Initialize page-specific features
     initializeContactForm();
     initializeAnimations();
+    initializeMemoireSlideshow();
 }
 
 function initializeContactForm() {
@@ -245,4 +246,27 @@ const throttledScrollHandler = throttle(() => {
     }
 }, 10);
 
-window.addEventListener('scroll', throttledScrollHandler); 
+window.addEventListener('scroll', throttledScrollHandler);
+
+// Mémoire Slideshow functionality
+function initializeMemoireSlideshow() {
+    const slides = document.querySelectorAll('.memoire-slideshow .slide');
+    
+    if (slides.length === 0) return;
+    
+    let currentSlideIndex = 0;
+    
+    function showNextSlide() {
+        // Remove active class from current slide
+        slides[currentSlideIndex].classList.remove('active');
+        
+        // Move to next slide (loop back to 0 if at end)
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        
+        // Add active class to new slide
+        slides[currentSlideIndex].classList.add('active');
+    }
+    
+    // Start the slideshow - change slides every 5 seconds
+    setInterval(showNextSlide, 5000);
+} 

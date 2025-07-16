@@ -93,13 +93,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-button.secondary {
     background: transparent;
-    border: 2px solid var(--navy-blue);
-    color: var(--navy-blue);
+    border: 2px solid var(--white);
+    color: var(--white);
 }
 
 .cta-button.secondary:hover {
-    background: var(--navy-blue);
-    color: var(--white);
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
 }
 
 /* Navigation */
@@ -605,6 +606,15 @@ a.brand-content .region {
     color: var(--white);
     text-align: left;
     font-size: 3.5rem;
+    margin-bottom: 0.1rem;
+}
+
+.memoire-text .section-subtitle {
+    color: var(--white);
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 .memoire-description {
@@ -617,44 +627,43 @@ a.brand-content .region {
 .memoire-visual {
     position: relative;
     height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
-.perfume-bottles {
+.memoire-slideshow {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.bottle {
+.slide {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
-.bottle-1 {
-    width: 80px;
-    height: 200px;
-    top: 10%;
-    left: 20%;
-    transform: rotate(-10deg);
+.slide.active {
+    opacity: 1;
 }
 
-.bottle-2 {
-    width: 90px;
-    height: 220px;
-    top: 20%;
-    right: 30%;
-    transform: rotate(5deg);
-}
-
-.bottle-3 {
-    width: 70px;
-    height: 180px;
-    bottom: 15%;
-    left: 50%;
-    transform: rotate(-5deg);
+.slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--navy-light) 100%);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Contact Section */
@@ -857,16 +866,7 @@ a.brand-content .region {
     border-color: var(--navy-light);
 }
 
-.cta-button.secondary {
-    background: transparent;
-    color: var(--navy-blue);
-    border: 2px solid var(--navy-blue);
-}
 
-.cta-button.secondary:hover {
-    background: var(--navy-blue);
-    color: var(--white);
-}
 
 /* Footer */
 .footer {
@@ -939,6 +939,10 @@ a.brand-content .region {
     
     .memoire-text .section-title {
         text-align: center;
+    }
+    
+    .memoire-visual {
+        height: 300px;
     }
 }
 
@@ -1053,5 +1057,9 @@ a.brand-content .region {
     .cta-button {
         width: 100%;
         max-width: 250px;
+    }
+    
+    .memoire-visual {
+        height: 250px;
     }
 } 
