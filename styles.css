@@ -976,6 +976,10 @@ a.brand-content .region {
         text-align: center;
     }
     
+    .memoire-text .section-subtitle {
+        text-align: center;
+    }
+    
     .memoire-visual {
         height: 300px;
     }
