@@ -423,6 +423,67 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
+/* Brand Content as Anchor */
+a.brand-content {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+a.brand-content:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.brand-content .brand-name {
+    color: var(--navy-blue);
+}
+
+a.brand-content .brand-description {
+    color: var(--medium-gray);
+}
+
+a.brand-content .region {
+    color: var(--navy-blue);
+}
+
+/* Brand Link Button */
+.brand-link {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.visit-brand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    background: var(--navy-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 2px solid var(--navy-blue);
+}
+
+.visit-brand-btn:hover {
+    background: var(--navy-light);
+    border-color: var(--navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 31, 63, 0.3);
+}
+
+.visit-brand-btn svg {
+    transition: var(--transition);
+}
+
+.visit-brand-btn:hover svg {
+    transform: translateX(2px);
+}
+
 /* Skeleton Loading Styles */
 .skeleton-loading {
     background: var(--white);
