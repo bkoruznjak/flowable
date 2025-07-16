@@ -423,6 +423,97 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
+/* Skeleton Loading Styles */
+.skeleton-loading {
+    background: var(--white);
+    border: 2px solid #e9ecef;
+    opacity: 0.7;
+}
+
+.skeleton-loading:hover {
+    transform: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton-status {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    width: 80px;
+    height: 24px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 20px;
+}
+
+.skeleton-title {
+    width: 60%;
+    height: 32px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.skeleton-text {
+    margin-bottom: 1.5rem;
+}
+
+.skeleton-line {
+    height: 16px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.skeleton-line.short {
+    width: 75%;
+}
+
+.skeleton-regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skeleton-region {
+    width: 70px;
+    height: 28px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 20px;
+}
+
+/* Add slight delay to each skeleton for staggered effect */
+.skeleton-loading:nth-child(2) .skeleton-status,
+.skeleton-loading:nth-child(2) .skeleton-title,
+.skeleton-loading:nth-child(2) .skeleton-line,
+.skeleton-loading:nth-child(2) .skeleton-region {
+    animation-delay: 0.2s;
+}
+
+.skeleton-loading:nth-child(3) .skeleton-status,
+.skeleton-loading:nth-child(3) .skeleton-title,
+.skeleton-loading:nth-child(3) .skeleton-line,
+.skeleton-loading:nth-child(3) .skeleton-region {
+    animation-delay: 0.4s;
+}
+
 /* Mémoire Section */
 .memoire {
     padding: var(--section-padding);
