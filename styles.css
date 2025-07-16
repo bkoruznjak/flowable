@@ -74,33 +74,23 @@ h1, h2, h3, h4, h5, h6 {
 .cta-button {
     display: inline-block;
     padding: 16px 32px;
-    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--navy-light) 100%);
-    color: var(--white);
+    background: transparent;
+    color: var(--navy-blue);
     text-decoration: none;
     border-radius: var(--border-radius);
     font-weight: 500;
     font-size: 1.1rem;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--navy-blue);
     position: relative;
     overflow: hidden;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.3);
-}
-
-.cta-button.secondary {
-    background: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.cta-button.secondary:hover {
     background: transparent;
     border: 2px solid var(--gold);
     color: var(--gold);
+    transform: translateY(-2px);
 }
 
 /* Navigation */
@@ -282,6 +272,22 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 20%;
     left: 60%;
     animation-delay: -5s;
+}
+
+.floating-element:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    left: 20%;
+    animation-delay: -2s;
+}
+
+.floating-element:nth-child(5) {
+    width: 60px;
+    height: 60px;
+    top: 10%;
+    right: 10%;
+    animation-delay: -4s;
 }
 
 @keyframes float {
@@ -617,6 +623,26 @@ a.brand-content .region {
     opacity: 0.9;
 }
 
+.memoire .cta-button {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.memoire .cta-button:hover {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
+.hero .cta-button {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.hero .cta-button:hover {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
 .memoire-description {
     font-size: 1.25rem;
     line-height: 1.7;
@@ -872,19 +898,21 @@ a.brand-content .region {
 .footer {
     background: var(--navy-dark);
     color: var(--white);
-    padding: 3rem 0 2rem;
+    padding: 1rem 0 1rem;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .footer-logo-image {
@@ -915,9 +943,16 @@ a.brand-content .region {
     display: none;
 }
 
-.footer-brand p,
-.footer-info p {
-    opacity: 0.8;
+.footer-tagline {
+    opacity: 0.9;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.footer-copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 /* Responsive Design */
