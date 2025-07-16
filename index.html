@@ -18,39 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <img src="assets/images/logo.svg" alt="Flowable" class="logo-image">
-                    <span class="logo-text">Flowable</span>
-                </a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#brands" class="nav-link">Brands</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#memoire" class="nav-link">Mémoire</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Header will be loaded here -->
+    <div id="header-container"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -128,7 +97,7 @@
                             <span class="region">Bosnia</span>
                             <span class="region">Slovenia</span>
                         </div>
-                        <p class="brand-description">Want to include Vertus in your region? <a href="#contact">Contact us</a> to discuss your needs.</p>
+                        <p class="brand-description">Want to include Vertus in your region? <br><a href="#contact">Contact us</a> to discuss your needs.</p>
                     </a>
                 </div>
                 <div class="brand-card skeleton-loading">
@@ -224,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@flowable.hr" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -237,6 +206,11 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
+                    <!-- Hidden fields for FormSubmit -->
+                    <input type="hidden" name="_subject" value="New contact form submission from Flowable website">
+                    <input type="hidden" name="_next" value="thank-you.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>
@@ -261,6 +235,7 @@
         </div>
     </footer>
 
+    <script src="header.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

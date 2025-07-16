@@ -1,143 +1,44 @@
-// DOM Elements
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const contactForm = document.getElementById('contact-form');
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Logo fallback handling
+// Wait for header to load before initializing page-specific functionality
 document.addEventListener('DOMContentLoaded', () => {
-    const logoImage = document.querySelector('.logo-image');
-    const logoText = document.querySelector('.logo-text');
-    const footerLogoImage = document.querySelector('.footer-logo-image');
-    const footerLogoText = document.querySelector('.footer-logo-text');
+    // Give header.js time to load and initialize
+    setTimeout(() => {
+        initializePageFeatures();
+    }, 100);
+});
+
+function initializePageFeatures() {
+    // Initialize page-specific features
+    initializeContactForm();
+    initializeAnimations();
+}
+
+function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
     
-    // Handle main logo fallback
-    if (logoImage) {
-        logoImage.addEventListener('error', () => {
-            logoImage.style.display = 'none';
-            if (logoText) logoText.style.display = 'inline';
+    // Contact form functionality can be added here if needed
+    // The form already has FormSubmit.co action, so it works automatically
+}
+
+
+
+function initializeAnimations() {
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
-        
-        logoImage.addEventListener('load', () => {
-            if (logoText) logoText.style.display = 'none';
-        });
-    }
-    
-    // Handle footer logo fallback
-    if (footerLogoImage) {
-        footerLogoImage.addEventListener('error', () => {
-            footerLogoImage.style.display = 'none';
-            if (footerLogoText) footerLogoText.style.display = 'block';
-        });
-        
-        footerLogoImage.addEventListener('load', () => {
-            if (footerLogoText) footerLogoText.style.display = 'none';
-        });
-    }
-});
+    }, observerOptions);
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Animate hamburger bars
-    const bars = hamburger.querySelectorAll('.bar');
-    bars.forEach((bar, index) => {
-        if (hamburger.classList.contains('active')) {
-            if (index === 0) bar.style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-            if (index === 1) bar.style.opacity = '0';
-            if (index === 2) bar.style.transform = 'rotate(45deg) translate(-5px, -6px)';
-        } else {
-            bar.style.transform = 'none';
-            bar.style.opacity = '1';
-        }
-    });
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        
-        // Reset hamburger bars
-        const bars = hamburger.querySelectorAll('.bar');
-        bars.forEach(bar => {
-            bar.style.transform = 'none';
-            bar.style.opacity = '1';
-        });
-    });
-});
-
-// Smooth scrolling for navigation links
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-            
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Highlight active navigation link
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
+    // Observe elements for animation
     const animateElements = document.querySelectorAll('.about-card, .brand-card, .section-header, .contact-item, .memoire-text');
     
     animateElements.forEach(el => {
@@ -146,31 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-});
+}
 
-// Contact form handling
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Create mailto link
-    const mailtoLink = `mailto:info@flowable.company?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    showNotification('Thank you for your message! Your email client should open shortly.', 'success');
-    
-    // Reset form
-    contactForm.reset();
-});
+// Note: Contact form now uses FormSubmit.co and doesn't need custom JavaScript handling
 
 // Notification system
 function showNotification(message, type = 'info') {
