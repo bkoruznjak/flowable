@@ -149,12 +149,10 @@ class HeaderManager {
         });
     }
 
-    // Logo fallback handling
+    // Logo fallback handling for header only
     initializeLogoFallback() {
         const logoImage = document.querySelector('.logo-image');
         const logoText = document.querySelector('.logo-text');
-        const footerLogoImage = document.querySelector('.footer-logo-image');
-        const footerLogoText = document.querySelector('.footer-logo-text');
         
         // Handle main logo fallback
         if (logoImage) {
@@ -165,18 +163,6 @@ class HeaderManager {
             
             logoImage.addEventListener('load', () => {
                 if (logoText) logoText.style.display = 'none';
-            });
-        }
-        
-        // Handle footer logo fallback
-        if (footerLogoImage) {
-            footerLogoImage.addEventListener('error', () => {
-                footerLogoImage.style.display = 'none';
-                if (footerLogoText) footerLogoText.style.display = 'block';
-            });
-            
-            footerLogoImage.addEventListener('load', () => {
-                if (footerLogoText) footerLogoText.style.display = 'none';
             });
         }
     }
